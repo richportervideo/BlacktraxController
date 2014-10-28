@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B6DCE9119FEC28B00337120 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9019FEC28B00337120 /* main.m */; };
+		9B6DCE9419FEC28B00337120 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9319FEC28B00337120 /* AppDelegate.m */; };
+		9B6DCE9719FEC28B00337120 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9619FEC28B00337120 /* ViewController.m */; };
+		9B6DCE9A19FEC28B00337120 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9819FEC28B00337120 /* Main.storyboard */; };
+		9B6DCE9C19FEC28B00337120 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9B19FEC28B00337120 /* Images.xcassets */; };
+		9B6DCE9F19FEC28B00337120 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9D19FEC28B00337120 /* LaunchScreen.xib */; };
+		9B6DCEAB19FEC28B00337120 /* BlacktraxControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DCEAA19FEC28B00337120 /* BlacktraxControllerTests.m */; };
+		9B942E9C19FFE61F002F985C /* F53OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E7D19FFE61F002F985C /* F53OSCBundle.m */; };
+		9B942E9D19FFE61F002F985C /* F53OSCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E7F19FFE61F002F985C /* F53OSCClient.m */; };
+		9B942E9E19FFE61F002F985C /* F53OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E8219FFE61F002F985C /* F53OSCMessage.m */; };
+		9B942E9F19FFE61F002F985C /* F53OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E8419FFE61F002F985C /* F53OSCPacket.m */; };
+		9B942EA019FFE61F002F985C /* F53OSCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E8619FFE61F002F985C /* F53OSCParser.m */; };
+		9B942EA119FFE61F002F985C /* F53OSCServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E8919FFE61F002F985C /* F53OSCServer.m */; };
+		9B942EA219FFE61F002F985C /* F53OSCSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E8B19FFE61F002F985C /* F53OSCSocket.m */; };
+		9B942EA319FFE61F002F985C /* F53OSCTimeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E8D19FFE61F002F985C /* F53OSCTimeTag.m */; };
+		9B942EA419FFE61F002F985C /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E8F19FFE61F002F985C /* GCDAsyncSocket.m */; };
+		9B942EA519FFE61F002F985C /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9119FFE61F002F985C /* GCDAsyncUdpSocket.m */; };
+		9B942EA619FFE61F002F985C /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9B942E9219FFE61F002F985C /* LICENSE.txt */; };
+		9B942EA719FFE61F002F985C /* NSData+F53OSCBlob.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9419FFE61F002F985C /* NSData+F53OSCBlob.m */; };
+		9B942EA819FFE61F002F985C /* NSDate+F53OSCTimeTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9619FFE61F002F985C /* NSDate+F53OSCTimeTag.m */; };
+		9B942EA919FFE61F002F985C /* NSNumber+F53OSCNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9819FFE61F002F985C /* NSNumber+F53OSCNumber.m */; };
+		9B942EAA19FFE61F002F985C /* NSString+F53OSCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9A19FFE61F002F985C /* NSString+F53OSCString.m */; };
+		9B942EAB19FFE61F002F985C /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9B19FFE61F002F985C /* README.markdown */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B6DCEA519FEC28B00337120 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B6DCE8319FEC28B00337120 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B6DCE8A19FEC28B00337120;
+			remoteInfo = BlacktraxController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9B6DCE8B19FEC28B00337120 /* BlacktraxController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlacktraxController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B6DCE8F19FEC28B00337120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B6DCE9019FEC28B00337120 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B6DCE9219FEC28B00337120 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9B6DCE9319FEC28B00337120 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9B6DCE9519FEC28B00337120 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9B6DCE9619FEC28B00337120 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9B6DCE9919FEC28B00337120 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B6DCE9B19FEC28B00337120 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9B6DCE9E19FEC28B00337120 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9B6DCEA419FEC28B00337120 /* BlacktraxControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlacktraxControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B6DCEA919FEC28B00337120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B6DCEAA19FEC28B00337120 /* BlacktraxControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlacktraxControllerTests.m; sourceTree = "<group>"; };
+		9B942E7B19FFE61F002F985C /* F53OSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSC.h; path = F53OSC/F53OSC.h; sourceTree = "<group>"; };
+		9B942E7C19FFE61F002F985C /* F53OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCBundle.h; path = F53OSC/F53OSCBundle.h; sourceTree = "<group>"; };
+		9B942E7D19FFE61F002F985C /* F53OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F53OSCBundle.m; path = F53OSC/F53OSCBundle.m; sourceTree = "<group>"; };
+		9B942E7E19FFE61F002F985C /* F53OSCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCClient.h; path = F53OSC/F53OSCClient.h; sourceTree = "<group>"; };
+		9B942E7F19FFE61F002F985C /* F53OSCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F53OSCClient.m; path = F53OSC/F53OSCClient.m; sourceTree = "<group>"; };
+		9B942E8019FFE61F002F985C /* F53OSCFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCFoundationAdditions.h; path = F53OSC/F53OSCFoundationAdditions.h; sourceTree = "<group>"; };
+		9B942E8119FFE61F002F985C /* F53OSCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCMessage.h; path = F53OSC/F53OSCMessage.h; sourceTree = "<group>"; };
+		9B942E8219FFE61F002F985C /* F53OSCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F53OSCMessage.m; path = F53OSC/F53OSCMessage.m; sourceTree = "<group>"; };
+		9B942E8319FFE61F002F985C /* F53OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCPacket.h; path = F53OSC/F53OSCPacket.h; sourceTree = "<group>"; };
+		9B942E8419FFE61F002F985C /* F53OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F53OSCPacket.m; path = F53OSC/F53OSCPacket.m; sourceTree = "<group>"; };
+		9B942E8519FFE61F002F985C /* F53OSCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCParser.h; path = F53OSC/F53OSCParser.h; sourceTree = "<group>"; };
+		9B942E8619FFE61F002F985C /* F53OSCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F53OSCParser.m; path = F53OSC/F53OSCParser.m; sourceTree = "<group>"; };
+		9B942E8719FFE61F002F985C /* F53OSCProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCProtocols.h; path = F53OSC/F53OSCProtocols.h; sourceTree = "<group>"; };
+		9B942E8819FFE61F002F985C /* F53OSCServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCServer.h; path = F53OSC/F53OSCServer.h; sourceTree = "<group>"; };
+		9B942E8919FFE61F002F985C /* F53OSCServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F53OSCServer.m; path = F53OSC/F53OSCServer.m; sourceTree = "<group>"; };
+		9B942E8A19FFE61F002F985C /* F53OSCSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCSocket.h; path = F53OSC/F53OSCSocket.h; sourceTree = "<group>"; };
+		9B942E8B19FFE61F002F985C /* F53OSCSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F53OSCSocket.m; path = F53OSC/F53OSCSocket.m; sourceTree = "<group>"; };
+		9B942E8C19FFE61F002F985C /* F53OSCTimeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = F53OSCTimeTag.h; path = F53OSC/F53OSCTimeTag.h; sourceTree = "<group>"; };
+		9B942E8D19FFE61F002F985C /* F53OSCTimeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = F53OSCTimeTag.m; path = F53OSC/F53OSCTimeTag.m; sourceTree = "<group>"; };
+		9B942E8E19FFE61F002F985C /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = F53OSC/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		9B942E8F19FFE61F002F985C /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = F53OSC/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		9B942E9019FFE61F002F985C /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = F53OSC/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		9B942E9119FFE61F002F985C /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = F53OSC/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		9B942E9219FFE61F002F985C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = F53OSC/LICENSE.txt; sourceTree = "<group>"; };
+		9B942E9319FFE61F002F985C /* NSData+F53OSCBlob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+F53OSCBlob.h"; path = "F53OSC/NSData+F53OSCBlob.h"; sourceTree = "<group>"; };
+		9B942E9419FFE61F002F985C /* NSData+F53OSCBlob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+F53OSCBlob.m"; path = "F53OSC/NSData+F53OSCBlob.m"; sourceTree = "<group>"; };
+		9B942E9519FFE61F002F985C /* NSDate+F53OSCTimeTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+F53OSCTimeTag.h"; path = "F53OSC/NSDate+F53OSCTimeTag.h"; sourceTree = "<group>"; };
+		9B942E9619FFE61F002F985C /* NSDate+F53OSCTimeTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+F53OSCTimeTag.m"; path = "F53OSC/NSDate+F53OSCTimeTag.m"; sourceTree = "<group>"; };
+		9B942E9719FFE61F002F985C /* NSNumber+F53OSCNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+F53OSCNumber.h"; path = "F53OSC/NSNumber+F53OSCNumber.h"; sourceTree = "<group>"; };
+		9B942E9819FFE61F002F985C /* NSNumber+F53OSCNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+F53OSCNumber.m"; path = "F53OSC/NSNumber+F53OSCNumber.m"; sourceTree = "<group>"; };
+		9B942E9919FFE61F002F985C /* NSString+F53OSCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+F53OSCString.h"; path = "F53OSC/NSString+F53OSCString.h"; sourceTree = "<group>"; };
+		9B942E9A19FFE61F002F985C /* NSString+F53OSCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+F53OSCString.m"; path = "F53OSC/NSString+F53OSCString.m"; sourceTree = "<group>"; };
+		9B942E9B19FFE61F002F985C /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.markdown; path = F53OSC/README.markdown; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B6DCE8819FEC28B00337120 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B6DCEA119FEC28B00337120 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B6DCE8219FEC28B00337120 = {
+			isa = PBXGroup;
+			children = (
+				9B6DCEB419FEC29700337120 /* MetatoneOSC */,
+				9B6DCE8D19FEC28B00337120 /* BlacktraxController */,
+				9B6DCEA719FEC28B00337120 /* BlacktraxControllerTests */,
+				9B6DCE8C19FEC28B00337120 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B6DCE8C19FEC28B00337120 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B6DCE8B19FEC28B00337120 /* BlacktraxController.app */,
+				9B6DCEA419FEC28B00337120 /* BlacktraxControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B6DCE8D19FEC28B00337120 /* BlacktraxController */ = {
+			isa = PBXGroup;
+			children = (
+				9B6DCE9219FEC28B00337120 /* AppDelegate.h */,
+				9B6DCE9319FEC28B00337120 /* AppDelegate.m */,
+				9B6DCE9519FEC28B00337120 /* ViewController.h */,
+				9B6DCE9619FEC28B00337120 /* ViewController.m */,
+				9B6DCE9819FEC28B00337120 /* Main.storyboard */,
+				9B6DCE9B19FEC28B00337120 /* Images.xcassets */,
+				9B6DCE9D19FEC28B00337120 /* LaunchScreen.xib */,
+				9B6DCE8E19FEC28B00337120 /* Supporting Files */,
+			);
+			path = BlacktraxController;
+			sourceTree = "<group>";
+		};
+		9B6DCE8E19FEC28B00337120 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B6DCE8F19FEC28B00337120 /* Info.plist */,
+				9B6DCE9019FEC28B00337120 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B6DCEA719FEC28B00337120 /* BlacktraxControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B6DCEAA19FEC28B00337120 /* BlacktraxControllerTests.m */,
+				9B6DCEA819FEC28B00337120 /* Supporting Files */,
+			);
+			path = BlacktraxControllerTests;
+			sourceTree = "<group>";
+		};
+		9B6DCEA819FEC28B00337120 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B6DCEA919FEC28B00337120 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B6DCEB419FEC29700337120 /* MetatoneOSC */ = {
+			isa = PBXGroup;
+			children = (
+				9B942E7B19FFE61F002F985C /* F53OSC.h */,
+				9B942E7C19FFE61F002F985C /* F53OSCBundle.h */,
+				9B942E7D19FFE61F002F985C /* F53OSCBundle.m */,
+				9B942E7E19FFE61F002F985C /* F53OSCClient.h */,
+				9B942E7F19FFE61F002F985C /* F53OSCClient.m */,
+				9B942E8019FFE61F002F985C /* F53OSCFoundationAdditions.h */,
+				9B942E8119FFE61F002F985C /* F53OSCMessage.h */,
+				9B942E8219FFE61F002F985C /* F53OSCMessage.m */,
+				9B942E8319FFE61F002F985C /* F53OSCPacket.h */,
+				9B942E8419FFE61F002F985C /* F53OSCPacket.m */,
+				9B942E8519FFE61F002F985C /* F53OSCParser.h */,
+				9B942E8619FFE61F002F985C /* F53OSCParser.m */,
+				9B942E8719FFE61F002F985C /* F53OSCProtocols.h */,
+				9B942E8819FFE61F002F985C /* F53OSCServer.h */,
+				9B942E8919FFE61F002F985C /* F53OSCServer.m */,
+				9B942E8A19FFE61F002F985C /* F53OSCSocket.h */,
+				9B942E8B19FFE61F002F985C /* F53OSCSocket.m */,
+				9B942E8C19FFE61F002F985C /* F53OSCTimeTag.h */,
+				9B942E8D19FFE61F002F985C /* F53OSCTimeTag.m */,
+				9B942E8E19FFE61F002F985C /* GCDAsyncSocket.h */,
+				9B942E8F19FFE61F002F985C /* GCDAsyncSocket.m */,
+				9B942E9019FFE61F002F985C /* GCDAsyncUdpSocket.h */,
+				9B942E9119FFE61F002F985C /* GCDAsyncUdpSocket.m */,
+				9B942E9219FFE61F002F985C /* LICENSE.txt */,
+				9B942E9319FFE61F002F985C /* NSData+F53OSCBlob.h */,
+				9B942E9419FFE61F002F985C /* NSData+F53OSCBlob.m */,
+				9B942E9519FFE61F002F985C /* NSDate+F53OSCTimeTag.h */,
+				9B942E9619FFE61F002F985C /* NSDate+F53OSCTimeTag.m */,
+				9B942E9719FFE61F002F985C /* NSNumber+F53OSCNumber.h */,
+				9B942E9819FFE61F002F985C /* NSNumber+F53OSCNumber.m */,
+				9B942E9919FFE61F002F985C /* NSString+F53OSCString.h */,
+				9B942E9A19FFE61F002F985C /* NSString+F53OSCString.m */,
+				9B942E9B19FFE61F002F985C /* README.markdown */,
+			);
+			name = MetatoneOSC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B6DCE8A19FEC28B00337120 /* BlacktraxController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B6DCEAE19FEC28B00337120 /* Build configuration list for PBXNativeTarget "BlacktraxController" */;
+			buildPhases = (
+				9B6DCE8719FEC28B00337120 /* Sources */,
+				9B6DCE8819FEC28B00337120 /* Frameworks */,
+				9B6DCE8919FEC28B00337120 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlacktraxController;
+			productName = BlacktraxController;
+			productReference = 9B6DCE8B19FEC28B00337120 /* BlacktraxController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B6DCEA319FEC28B00337120 /* BlacktraxControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B6DCEB119FEC28B00337120 /* Build configuration list for PBXNativeTarget "BlacktraxControllerTests" */;
+			buildPhases = (
+				9B6DCEA019FEC28B00337120 /* Sources */,
+				9B6DCEA119FEC28B00337120 /* Frameworks */,
+				9B6DCEA219FEC28B00337120 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B6DCEA619FEC28B00337120 /* PBXTargetDependency */,
+			);
+			name = BlacktraxControllerTests;
+			productName = BlacktraxControllerTests;
+			productReference = 9B6DCEA419FEC28B00337120 /* BlacktraxControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B6DCE8319FEC28B00337120 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = RichPorter;
+				TargetAttributes = {
+					9B6DCE8A19FEC28B00337120 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					9B6DCEA319FEC28B00337120 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 9B6DCE8A19FEC28B00337120;
+					};
+				};
+			};
+			buildConfigurationList = 9B6DCE8619FEC28B00337120 /* Build configuration list for PBXProject "BlacktraxController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B6DCE8219FEC28B00337120;
+			productRefGroup = 9B6DCE8C19FEC28B00337120 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B6DCE8A19FEC28B00337120 /* BlacktraxController */,
+				9B6DCEA319FEC28B00337120 /* BlacktraxControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B6DCE8919FEC28B00337120 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B942EA619FFE61F002F985C /* LICENSE.txt in Resources */,
+				9B6DCE9A19FEC28B00337120 /* Main.storyboard in Resources */,
+				9B6DCE9F19FEC28B00337120 /* LaunchScreen.xib in Resources */,
+				9B6DCE9C19FEC28B00337120 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B6DCEA219FEC28B00337120 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B6DCE8719FEC28B00337120 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B942EA419FFE61F002F985C /* GCDAsyncSocket.m in Sources */,
+				9B942EA319FFE61F002F985C /* F53OSCTimeTag.m in Sources */,
+				9B942E9F19FFE61F002F985C /* F53OSCPacket.m in Sources */,
+				9B942EA919FFE61F002F985C /* NSNumber+F53OSCNumber.m in Sources */,
+				9B942EA219FFE61F002F985C /* F53OSCSocket.m in Sources */,
+				9B942EAA19FFE61F002F985C /* NSString+F53OSCString.m in Sources */,
+				9B942EA119FFE61F002F985C /* F53OSCServer.m in Sources */,
+				9B942EA019FFE61F002F985C /* F53OSCParser.m in Sources */,
+				9B6DCE9719FEC28B00337120 /* ViewController.m in Sources */,
+				9B6DCE9419FEC28B00337120 /* AppDelegate.m in Sources */,
+				9B942EA819FFE61F002F985C /* NSDate+F53OSCTimeTag.m in Sources */,
+				9B942E9C19FFE61F002F985C /* F53OSCBundle.m in Sources */,
+				9B942E9D19FFE61F002F985C /* F53OSCClient.m in Sources */,
+				9B942E9E19FFE61F002F985C /* F53OSCMessage.m in Sources */,
+				9B942EAB19FFE61F002F985C /* README.markdown in Sources */,
+				9B942EA519FFE61F002F985C /* GCDAsyncUdpSocket.m in Sources */,
+				9B942EA719FFE61F002F985C /* NSData+F53OSCBlob.m in Sources */,
+				9B6DCE9119FEC28B00337120 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B6DCEA019FEC28B00337120 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B6DCEAB19FEC28B00337120 /* BlacktraxControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B6DCEA619FEC28B00337120 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B6DCE8A19FEC28B00337120 /* BlacktraxController */;
+			targetProxy = 9B6DCEA519FEC28B00337120 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9B6DCE9819FEC28B00337120 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B6DCE9919FEC28B00337120 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9B6DCE9D19FEC28B00337120 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B6DCE9E19FEC28B00337120 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B6DCEAC19FEC28B00337120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9B6DCEAD19FEC28B00337120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B6DCEAF19FEC28B00337120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BlacktraxController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9B6DCEB019FEC28B00337120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BlacktraxController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9B6DCEB219FEC28B00337120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlacktraxControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlacktraxController.app/BlacktraxController";
+			};
+			name = Debug;
+		};
+		9B6DCEB319FEC28B00337120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BlacktraxControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlacktraxController.app/BlacktraxController";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B6DCE8619FEC28B00337120 /* Build configuration list for PBXProject "BlacktraxController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B6DCEAC19FEC28B00337120 /* Debug */,
+				9B6DCEAD19FEC28B00337120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B6DCEAE19FEC28B00337120 /* Build configuration list for PBXNativeTarget "BlacktraxController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B6DCEAF19FEC28B00337120 /* Debug */,
+				9B6DCEB019FEC28B00337120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B6DCEB119FEC28B00337120 /* Build configuration list for PBXNativeTarget "BlacktraxControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B6DCEB219FEC28B00337120 /* Debug */,
+				9B6DCEB319FEC28B00337120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B6DCE8319FEC28B00337120 /* Project object */;
+}
