@@ -33,9 +33,20 @@
 }
 
 -(void)takeMessage:(F53OSCMessage *)message {
+    
+    //Setting the Address Label
     [self.addressLabel setText:message.addressPattern];
-    [self.argumentsLabel setText:[message.arguments description]];
+    //Requesting Argument as an Array
+    NSArray *arguments = message.arguments;
+    //Converting to NSNumber
+    NSNumber *arg = [[NSNumber alloc]init];
+    arg = [NSNumber numberWithFloat:([[arguments objectAtIndex:0]floatValue ])];
+    //Setting Argument label
+    [self.argumentsLabel setText:[arg stringValue]];
+    
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {
