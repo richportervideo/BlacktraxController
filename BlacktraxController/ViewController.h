@@ -15,5 +15,15 @@
 -(void)takeMessage:(F53OSCMessage *)message;
 
 
+
+- (IBAction)calibrateTouchDown:(id)sender;
+- (IBAction)calibrateTouchUpInside:(id)sender;
+
+
+
+
+
+
+
 @end
 
