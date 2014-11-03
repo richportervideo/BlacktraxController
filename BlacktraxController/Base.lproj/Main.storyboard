@@ -21,6 +21,10 @@
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearTouchDown:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YnQ-iQ-XqI"/>
+                                    <action selector="clearTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ue5-Z3-Vch"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vi-f1-l6U">
                                 <rect key="frame" x="242" y="513" width="62" height="30"/>
@@ -37,56 +41,104 @@
                                 <state key="normal" title="Left">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="leftTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="PgH-Ve-d7a"/>
+                                    <action selector="leftTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PKo-FH-beL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKP-6a-v2f">
                                 <rect key="frame" x="227" y="359" width="46" height="30"/>
                                 <state key="normal" title="Right">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="rightTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="Ivs-nL-2Bd"/>
+                                    <action selector="rightTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6kv-El-OVF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGf-3C-tfT">
                                 <rect key="frame" x="137" y="292" width="46" height="30"/>
                                 <state key="normal" title="Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="upTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="Hwp-mo-cmy"/>
+                                    <action selector="upTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kse-Hk-868"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkB-X9-KN5">
                                 <rect key="frame" x="137" y="445" width="46" height="30"/>
                                 <state key="normal" title="Down">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="downTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="GlX-pd-oPP"/>
+                                    <action selector="downTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Re0-3W-cbG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lz2-tu-l1r">
                                 <rect key="frame" x="16" y="28" width="46" height="30"/>
                                 <state key="normal" title="P+">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pplusTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="bVg-QW-Q23"/>
+                                    <action selector="pplusTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cQ1-3a-IIH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZ5-Nd-hzf">
                                 <rect key="frame" x="94" y="28" width="46" height="30"/>
                                 <state key="normal" title="P-">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pminusTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="wDo-VI-RBX"/>
+                                    <action selector="pminusTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TyU-6O-wwh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpg-NM-aaX">
                                 <rect key="frame" x="179" y="28" width="46" height="30"/>
                                 <state key="normal" title="Test">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="testTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="YTv-Nz-fUG"/>
+                                    <action selector="testTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fpR-GW-dzh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQ6-sK-vpU">
                                 <rect key="frame" x="258" y="28" width="46" height="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="o9z-Z6-RTE"/>
+                                    <action selector="doneTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FAT-a9-CHc"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kbc-Us-Q7N">
+                                <rect key="frame" x="16" y="78" width="288" height="200"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Smp-2f-L1l" appends="YES" id="h9o-f1-HjF"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="theGestureView" destination="Kbc-Us-Q7N" id="wL9-ob-RBE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Smp-2f-L1l">
+                    <connections>
+                        <action selector="handlePan:" destination="vXZ-lx-hvc" id="IUz-oX-pyh"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="421" y="528"/>
+            <point key="canvasLocation" x="596" y="497"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
