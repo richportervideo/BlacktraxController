@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#define SENDHOST @"10.0.30.242"
+#define SENDHOST @"10.0.1.251"
 #define SENDPORT 9000
 #define RECEIVEPORT 3002
 
@@ -47,17 +47,9 @@
     NSNumber *arg = [[NSNumber alloc]init];
     arg = [NSNumber numberWithFloat:([[arguments objectAtIndex:0]floatValue ])];
     //Setting Argument label
-    [self.argumentsLabel setText:[arg stringValue]];
+    [self.incomingDataLabel setText:[arg stringValue]];
     NSLog(@"Incoming address: %@",  message.addressPattern);
     
-    
-    if ([message.addressPattern isEqualToString:@"/1/fader1"]) {
-        [self.resultLabel setText:@"Fader"];
-    } else if ([message.addressPattern isEqualToString:@"/1/push1"]){
-        [self.resultLabel setText:@"Push"];
-    } else {
-        [self.resultLabel setText:@"Default"];
-    }
     
 }
 
@@ -94,10 +86,10 @@
      
     */
     
-    F53OSCMessage *messageX = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/x" arguments:@[[NSNumber numberWithFloat:NewlocationX]]];
+    F53OSCMessage *messageX = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/x" arguments:@[[NSNumber numberWithFloat:NewlocationX]]];
     [self.oscClient sendPacket:messageX toHost:SENDHOST onPort:SENDPORT];
     
-    F53OSCMessage *messageY = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/y" arguments:@[[NSNumber numberWithFloat:NewlocationY]]];
+    F53OSCMessage *messageY = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/y" arguments:@[[NSNumber numberWithFloat:NewlocationY]]];
     [self.oscClient sendPacket:messageY toHost:SENDHOST onPort:SENDPORT];
     
 }

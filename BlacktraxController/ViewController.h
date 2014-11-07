@@ -22,6 +22,8 @@
 //Outlet for the view housing the gesture recogniser
 @property (weak, nonatomic) IBOutlet UIView *theGestureView;
 
+//incoming data display
+@property (weak, nonatomic) IBOutlet UILabel *incomingDataLabel;
 
 //Button declarations...
 
