@@ -10,7 +10,7 @@
 
 #define SENDHOST @"10.0.1.251"
 #define SENDPORT 9000
-#define RECEIVEPORT 3002
+#define RECEIVEPORT 9001
 
 @interface ViewController ()
 
@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *argumentsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property  BOOL onOffState;
 
 @end
 
@@ -32,12 +33,19 @@
     [self.oscServer setPort:RECEIVEPORT];
     [self.oscServer setDelegate:self];
     [self.oscServer startListening];
+    _onOffState = NO;
+    [_onOffButton setTitle:@"Start" forState:(UIControlStateNormal)];
+    
 }
 
 
 //This reciever method handles incoming OSC Messages
 
 -(void)takeMessage:(F53OSCMessage *)message {
+    
+    /*
+     
+     Incoming messages not implemented yet
     
     //Setting the Address Label
     [self.addressLabel setText:message.addressPattern];
@@ -50,6 +58,7 @@
     [self.incomingDataLabel setText:[arg stringValue]];
     NSLog(@"Incoming address: %@",  message.addressPattern);
     
+    */
     
 }
 
@@ -96,13 +105,13 @@
 
 - (IBAction)calibrateTouchDown:(id)sender {
     
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/calibrate" arguments:@[@1.f]];
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/ok" arguments:@[@1.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 
 }
 
 - (IBAction)calibrateTouchUpInside:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/calibrate" arguments:@[@0.f]];
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/ok" arguments:@[@0.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 
@@ -157,43 +166,80 @@
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 
-- (IBAction)pplusTouchDown:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/pplus" arguments:@[@1.f]];
+- (IBAction)nextTouchDown:(id)sender {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/next" arguments:@[@1.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 
-- (IBAction)pplusTouchUpInside:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/pplus" arguments:@[@0.f]];
+- (IBAction)nextTouchUpInside:(id)sender {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/next" arguments:@[@0.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 
-- (IBAction)pminusTouchDown:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/pminus" arguments:@[@1.f]];
+- (IBAction)prevTouchDown:(id)sender {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/prev" arguments:@[@1.f]];
+    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+
+}
+
+- (IBAction)prevTouchUpInside:(id)sender {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/prev" arguments:@[@0.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 
-- (IBAction)pminusTouchUpInside:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/pminus" arguments:@[@0]];
+
+
+- (IBAction)onOffTouchDown:(id)sender {
+    if (!_onOffState) {
+        F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/start" arguments:@[@1.f]];
+        [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+        // NSLog(@"Start Message Just Sent");
+    } else {
+        F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/done" arguments:@[@1.f]];
+        [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+        // NSLog(@"Done Message Just Sent");
+    }
+    
+}
+
+- (IBAction)onOffTouchUpInside:(id)sender {
+    
+    if (!_onOffState) {
+        [_onOffButton setTitle:@"Done" forState:(UIControlStateNormal)];
+        _onOffState = YES;
+        F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/start" arguments:@[@0.f]];
+        [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+        // NSLog(@"Start Message Just Sent");
+        // NSLog(@"onOffState = %@", _onOffState ? @"Yes" : @"No" );
+    } else {
+        [_onOffButton setTitle:@"Start" forState:(UIControlStateNormal)];
+        _onOffState = NO;
+        F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/done" arguments:@[@0.f]];
+        [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+        // NSLog(@"Done Message Just Sent");
+        // NSLog(@"onOffState = %@", _onOffState ? @"Yes" : @"No" );
+        
+    }
+    
+}
+
+- (IBAction)rotLeftTouchDown:(id)sender {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotleft" arguments:@[@1.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 
-- (IBAction)testTouchDown:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/test" arguments:@[@1.f]];
+- (IBAction)rotLeftTouchUpInside:(id)sender {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotleft" arguments:@[@0.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 
-- (IBAction)testTouchUpInside:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/test" arguments:@[@0.f]];
+- (IBAction)rotRightTouchDown:(id)sender {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotright" arguments:@[@1.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 
-- (IBAction)doneTouchDown:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/done" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
-}
-
-- (IBAction)doneTouchUpInside:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/done" arguments:@[@0.f]];
+- (IBAction)rotRightTouchUpInside:(id)sender {
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotright" arguments:@[@0.f]];
     [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
 }
 

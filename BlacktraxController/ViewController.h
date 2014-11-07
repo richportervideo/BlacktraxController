@@ -22,8 +22,7 @@
 //Outlet for the view housing the gesture recogniser
 @property (weak, nonatomic) IBOutlet UIView *theGestureView;
 
-//incoming data display
-@property (weak, nonatomic) IBOutlet UILabel *incomingDataLabel;
+@property (weak, nonatomic) IBOutlet UIButton *onOffButton;
 
 //Button declarations...
 
@@ -45,17 +44,20 @@
 - (IBAction)upTouchDown:(id)sender;
 - (IBAction)upTouchUpInside:(id)sender;
 
-- (IBAction)pplusTouchDown:(id)sender;
-- (IBAction)pplusTouchUpInside:(id)sender;
+- (IBAction)nextTouchDown:(id)sender;
+- (IBAction)nextTouchUpInside:(id)sender;
 
-- (IBAction)pminusTouchDown:(id)sender;
-- (IBAction)pminusTouchUpInside:(id)sender;
+- (IBAction)prevTouchDown:(id)sender;
+- (IBAction)prevTouchUpInside:(id)sender;
 
-- (IBAction)testTouchDown:(id)sender;
-- (IBAction)testTouchUpInside:(id)sender;
+- (IBAction)onOffTouchDown:(id)sender;
+- (IBAction)onOffTouchUpInside:(id)sender;
 
-- (IBAction)doneTouchDown:(id)sender;
-- (IBAction)doneTouchUpInside:(id)sender;
+- (IBAction)rotLeftTouchDown:(id)sender;
+- (IBAction)rotLeftTouchUpInside:(id)sender;
+
+- (IBAction)rotRightTouchDown:(id)sender;
+- (IBAction)rotRightTouchUpInside:(id)sender;
 
 @end
 

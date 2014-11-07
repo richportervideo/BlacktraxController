@@ -30,7 +30,7 @@
 		9B942EA919FFE61F002F985C /* NSNumber+F53OSCNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9819FFE61F002F985C /* NSNumber+F53OSCNumber.m */; };
 		9B942EAA19FFE61F002F985C /* NSString+F53OSCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9A19FFE61F002F985C /* NSString+F53OSCString.m */; };
 		9B942EAB19FFE61F002F985C /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9B19FFE61F002F985C /* README.markdown */; };
-		9B942EAD1A014B30002F985C /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B942EAC1A014B30002F985C /* right.png */; };
+		9BE786FC1A0CEA550037BA05 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE786FB1A0CEA550037BA05 /* Splash.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,7 @@
 		9B942E9919FFE61F002F985C /* NSString+F53OSCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+F53OSCString.h"; path = "F53OSC/NSString+F53OSCString.h"; sourceTree = "<group>"; };
 		9B942E9A19FFE61F002F985C /* NSString+F53OSCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+F53OSCString.m"; path = "F53OSC/NSString+F53OSCString.m"; sourceTree = "<group>"; };
 		9B942E9B19FFE61F002F985C /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.markdown; path = F53OSC/README.markdown; sourceTree = "<group>"; };
-		9B942EAC1A014B30002F985C /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = right.png; path = Icons/right.png; sourceTree = "<group>"; };
+		9BE786FB1A0CEA550037BA05 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splash.png; path = Icons/Splash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +215,7 @@
 		9B942EAE1A014B38002F985C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				9B942EAC1A014B30002F985C /* right.png */,
+				9BE786FB1A0CEA550037BA05 /* Splash.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -302,9 +302,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B942EAD1A014B30002F985C /* right.png in Resources */,
 				9B942EA619FFE61F002F985C /* LICENSE.txt in Resources */,
 				9B6DCE9A19FEC28B00337120 /* Main.storyboard in Resources */,
+				9BE786FC1A0CEA550037BA05 /* Splash.png in Resources */,
 				9B6DCE9F19FEC28B00337120 /* LaunchScreen.xib in Resources */,
 				9B6DCE9C19FEC28B00337120 /* Images.xcassets in Resources */,
 			);
