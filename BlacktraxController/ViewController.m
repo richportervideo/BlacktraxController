@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "StatusViewController.h"
+#import "calibration.h"
+#import "SetIPViewController.h"
 
 #define SENDHOST @"10.0.1.251"
 #define SENDPORT 9000
@@ -17,10 +20,8 @@
 @property (strong, nonatomic) F53OSCClient* oscClient;
 @property (strong, nonatomic) F53OSCServer* oscServer;
 @property (strong, nonatomic)  UIView* gestureView;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *argumentsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property  BOOL onOffState;
+
 
 @end
 
@@ -33,7 +34,12 @@
     [self.oscServer setPort:RECEIVEPORT];
     [self.oscServer setDelegate:self];
     [self.oscServer startListening];
+    
+    //Is ViewDidLoad the right place for this?
+    
+    //Bool used to control the state of the Start button
     _onOffState = NO;
+    //Set label for start button
     [_onOffButton setTitle:@"Start" forState:(UIControlStateNormal)];
     
 }
@@ -266,6 +272,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+ #pragma mark - Navigation
+ 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"StatusView"]){
+        StatusViewController *controller = (StatusViewController *)segue.destinationViewController;
+        NSLog(@"This is getting called inside Preapre For Segue");
+        
+        
+    }
+}
+
 
 
 @end

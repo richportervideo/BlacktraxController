@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B2E35DE1A101D490079F805 /* SetIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E35DD1A101D490079F805 /* SetIPViewController.m */; };
+		9B2E35E41A10E5420079F805 /* calibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E35E31A10E5420079F805 /* calibration.m */; };
+		9B2E35EA1A10FFA60079F805 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E35E91A10FFA60079F805 /* StatusViewController.m */; };
 		9B6DCE9119FEC28B00337120 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9019FEC28B00337120 /* main.m */; };
 		9B6DCE9419FEC28B00337120 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9319FEC28B00337120 /* AppDelegate.m */; };
 		9B6DCE9719FEC28B00337120 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DCE9619FEC28B00337120 /* ViewController.m */; };
@@ -44,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B2E35DC1A101D490079F805 /* SetIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetIPViewController.h; sourceTree = "<group>"; };
+		9B2E35DD1A101D490079F805 /* SetIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetIPViewController.m; sourceTree = "<group>"; };
+		9B2E35E21A10E5420079F805 /* calibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calibration.h; sourceTree = "<group>"; };
+		9B2E35E31A10E5420079F805 /* calibration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calibration.m; sourceTree = "<group>"; };
+		9B2E35E81A10FFA60079F805 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		9B2E35E91A10FFA60079F805 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
 		9B6DCE8B19FEC28B00337120 /* BlacktraxController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlacktraxController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6DCE8F19FEC28B00337120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6DCE9019FEC28B00337120 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -134,11 +143,17 @@
 		9B6DCE8D19FEC28B00337120 /* BlacktraxController */ = {
 			isa = PBXGroup;
 			children = (
+				9B2E35E81A10FFA60079F805 /* StatusViewController.h */,
+				9B2E35E91A10FFA60079F805 /* StatusViewController.m */,
+				9B2E35E21A10E5420079F805 /* calibration.h */,
+				9B2E35E31A10E5420079F805 /* calibration.m */,
 				9B6DCE9219FEC28B00337120 /* AppDelegate.h */,
 				9B6DCE9319FEC28B00337120 /* AppDelegate.m */,
 				9B6DCE9519FEC28B00337120 /* ViewController.h */,
 				9B6DCE9619FEC28B00337120 /* ViewController.m */,
 				9B6DCE9819FEC28B00337120 /* Main.storyboard */,
+				9B2E35DC1A101D490079F805 /* SetIPViewController.h */,
+				9B2E35DD1A101D490079F805 /* SetIPViewController.m */,
 				9B6DCE9B19FEC28B00337120 /* Images.xcassets */,
 				9B6DCE9D19FEC28B00337120 /* LaunchScreen.xib */,
 				9B6DCE8E19FEC28B00337120 /* Supporting Files */,
@@ -328,6 +343,7 @@
 				9B942EA319FFE61F002F985C /* F53OSCTimeTag.m in Sources */,
 				9B942E9F19FFE61F002F985C /* F53OSCPacket.m in Sources */,
 				9B942EA919FFE61F002F985C /* NSNumber+F53OSCNumber.m in Sources */,
+				9B2E35DE1A101D490079F805 /* SetIPViewController.m in Sources */,
 				9B942EA219FFE61F002F985C /* F53OSCSocket.m in Sources */,
 				9B942EAA19FFE61F002F985C /* NSString+F53OSCString.m in Sources */,
 				9B942EA119FFE61F002F985C /* F53OSCServer.m in Sources */,
@@ -336,12 +352,14 @@
 				9B6DCE9419FEC28B00337120 /* AppDelegate.m in Sources */,
 				9B942EA819FFE61F002F985C /* NSDate+F53OSCTimeTag.m in Sources */,
 				9B942E9C19FFE61F002F985C /* F53OSCBundle.m in Sources */,
+				9B2E35EA1A10FFA60079F805 /* StatusViewController.m in Sources */,
 				9B942E9D19FFE61F002F985C /* F53OSCClient.m in Sources */,
 				9B942E9E19FFE61F002F985C /* F53OSCMessage.m in Sources */,
 				9B942EAB19FFE61F002F985C /* README.markdown in Sources */,
 				9B942EA519FFE61F002F985C /* GCDAsyncUdpSocket.m in Sources */,
 				9B942EA719FFE61F002F985C /* NSData+F53OSCBlob.m in Sources */,
 				9B6DCE9119FEC28B00337120 /* main.m in Sources */,
+				9B2E35E41A10E5420079F805 /* calibration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

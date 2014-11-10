@@ -59,5 +59,11 @@
 - (IBAction)rotRightTouchDown:(id)sender;
 - (IBAction)rotRightTouchUpInside:(id)sender;
 
+// Change Page
+
+- (IBAction)ChangePage:(id)sender;
+
+//Ip Address Text Boxes
+
 @end
 
