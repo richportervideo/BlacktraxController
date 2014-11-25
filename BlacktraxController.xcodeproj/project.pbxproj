@@ -41,6 +41,7 @@
 		9BE4D04F1A24ABC40066B0CE /* rotright.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D04D1A24ABC40066B0CE /* rotright.png */; };
 		9BE4D0521A24AC6F0066B0CE /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0501A24AC6F0066B0CE /* next.png */; };
 		9BE4D0531A24AC6F0066B0CE /* prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0511A24AC6F0066B0CE /* prev.png */; };
+		9BE4D0571A24B22B0066B0CE /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0561A24B22B0066B0CE /* update.png */; };
 		9BE786FC1A0CEA550037BA05 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE786FB1A0CEA550037BA05 /* Splash.png */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		9BE4D04D1A24ABC40066B0CE /* rotright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rotright.png; path = Icons/rotright.png; sourceTree = "<group>"; };
 		9BE4D0501A24AC6F0066B0CE /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = next.png; path = Icons/next.png; sourceTree = "<group>"; };
 		9BE4D0511A24AC6F0066B0CE /* prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prev.png; path = Icons/prev.png; sourceTree = "<group>"; };
+		9BE4D0561A24B22B0066B0CE /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = update.png; path = Icons/update.png; sourceTree = "<group>"; };
 		9BE786FB1A0CEA550037BA05 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splash.png; path = Icons/Splash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,6 +242,7 @@
 		9B942EAE1A014B38002F985C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				9BE4D0561A24B22B0066B0CE /* update.png */,
 				9BE4D0501A24AC6F0066B0CE /* next.png */,
 				9BE4D0511A24AC6F0066B0CE /* prev.png */,
 				9BE4D04C1A24ABC40066B0CE /* rotleft.png */,
@@ -337,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE4D0571A24B22B0066B0CE /* update.png in Resources */,
 				9BE4D0521A24AC6F0066B0CE /* next.png in Resources */,
 				9BE4D0411A24A7250066B0CE /* up.png in Resources */,
 				9B942EA619FFE61F002F985C /* LICENSE.txt in Resources */,

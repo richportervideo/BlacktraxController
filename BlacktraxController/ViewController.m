@@ -29,10 +29,11 @@
     [self.oscServer startListening];
     _onOffState = NO;
     [_onOffButton setTitle:@"Start" forState:(UIControlStateNormal)];
+    /*
     NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current IP Address...%@", _theIPAddress);
     NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current Send Port Address...%i", _theSendPort);
     NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current Recieve Port...%i", _theRecievePort);
-    
+    */
 }
 
 
