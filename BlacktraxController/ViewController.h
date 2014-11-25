@@ -13,6 +13,9 @@
 @interface ViewController : UIViewController <F53OSCClientDelegate>
 
 -(void)takeMessage:(F53OSCMessage *)message;
+@property (strong, nonatomic) NSString* theIPAddress;
+@property int theSendPort;
+@property int theRecievePort;
 
 
 //Gesture Recognition

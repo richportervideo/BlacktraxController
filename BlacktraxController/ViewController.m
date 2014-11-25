@@ -7,19 +7,13 @@
 //
 
 #import "ViewController.h"
-
-#define SENDHOST @"10.0.1.251"
-#define SENDPORT 9000
-#define RECEIVEPORT 9001
+#import "SetupViewController.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) F53OSCClient* oscClient;
 @property (strong, nonatomic) F53OSCServer* oscServer;
 @property (strong, nonatomic)  UIView* gestureView;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *argumentsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property  BOOL onOffState;
 
 @end
@@ -30,11 +24,14 @@
     [super viewDidLoad];
     self.oscClient = [[F53OSCClient alloc] init];
     self.oscServer = [[F53OSCServer alloc] init];
-    [self.oscServer setPort:RECEIVEPORT];
+    [self.oscServer setPort:_theRecievePort];
     [self.oscServer setDelegate:self];
     [self.oscServer startListening];
     _onOffState = NO;
     [_onOffButton setTitle:@"Start" forState:(UIControlStateNormal)];
+    NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current IP Address...%@", _theIPAddress);
+    NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current Send Port Address...%i", _theSendPort);
+    NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current Recieve Port...%i", _theRecievePort);
     
 }
 
@@ -96,95 +93,95 @@
     */
     
     F53OSCMessage *messageX = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/x" arguments:@[[NSNumber numberWithFloat:NewlocationX]]];
-    [self.oscClient sendPacket:messageX toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:messageX toHost:_theIPAddress onPort:_theSendPort];
     
     F53OSCMessage *messageY = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/y" arguments:@[[NSNumber numberWithFloat:NewlocationY]]];
-    [self.oscClient sendPacket:messageY toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:messageY toHost:_theIPAddress onPort:_theSendPort];
     
 }
 
 - (IBAction)calibrateTouchDown:(id)sender {
     
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/ok" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 
 }
 
 - (IBAction)calibrateTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/ok" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)clearTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/clear" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
     
 }
 
 - (IBAction)clearTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/clear" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)downTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/down" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)downTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/down" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)rightTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/right" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)rightTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/right" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)leftTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/left" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)leftTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/left" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)upTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/up" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)upTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/up" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)nextTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/next" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)nextTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/next" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)prevTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/prev" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 
 }
 
 - (IBAction)prevTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/prev" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 
@@ -192,11 +189,11 @@
 - (IBAction)onOffTouchDown:(id)sender {
     if (!_onOffState) {
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/start" arguments:@[@1.f]];
-        [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
         // NSLog(@"Start Message Just Sent");
     } else {
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/done" arguments:@[@1.f]];
-        [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
         // NSLog(@"Done Message Just Sent");
     }
     
@@ -208,14 +205,14 @@
         [_onOffButton setTitle:@"Done" forState:(UIControlStateNormal)];
         _onOffState = YES;
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/start" arguments:@[@0.f]];
-        [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
         // NSLog(@"Start Message Just Sent");
         // NSLog(@"onOffState = %@", _onOffState ? @"Yes" : @"No" );
     } else {
         [_onOffButton setTitle:@"Start" forState:(UIControlStateNormal)];
         _onOffState = NO;
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/done" arguments:@[@0.f]];
-        [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
         // NSLog(@"Done Message Just Sent");
         // NSLog(@"onOffState = %@", _onOffState ? @"Yes" : @"No" );
         
@@ -225,22 +222,22 @@
 
 - (IBAction)rotLeftTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotleft" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)rotLeftTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotleft" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)rotRightTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotright" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 - (IBAction)rotRightTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotright" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 
@@ -250,17 +247,30 @@
  
  - (IBAction)sendSliderMessage:(UISlider *)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/fader" arguments:@[[NSNumber numberWithFloat:sender.value]]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
     
 }
 
 - (IBAction)SendMessage:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/" arguments:@[@5.82]];
-    [self.oscClient sendPacket:message toHost:SENDHOST onPort:SENDPORT];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
 */
 
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     if([segue.identifier isEqualToString:@"MainToIP"]){
+         SetupViewController *controller = (SetupViewController *)segue.destinationViewController;
+         controller.setupIPAddress = _theIPAddress;
+         controller.setupSendPort = _theSendPort;
+         controller.setupRecievePort = _theRecievePort;
+ }
+
+ }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
