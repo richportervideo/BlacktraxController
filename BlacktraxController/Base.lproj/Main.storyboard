@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfD-uE-o92">
-                                <rect key="frame" x="17" y="506" width="46" height="46"/>
+                                <rect key="frame" x="183" y="8" width="46" height="46"/>
                                 <state key="normal" image="cancel.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZ5-Nd-hzf">
-                                <rect key="frame" x="16" y="11" width="46" height="46"/>
+                                <rect key="frame" x="16" y="505" width="46" height="46"/>
                                 <state key="normal" image="prev.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -85,7 +85,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vi-f1-l6U">
-                                <rect key="frame" x="251" y="505" width="46" height="46"/>
+                                <rect key="frame" x="251" y="8" width="46" height="46"/>
                                 <state key="normal" image="OK.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -114,17 +114,8 @@
                                     <action selector="rotRightTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hrT-Gu-qEB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEL-kS-UGb">
-                                <rect key="frame" x="282" y="24" width="22" height="22"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="OVE-eK-w8D" kind="modal" identifier="MainToIP" id="kMd-Os-REc"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvV-5S-0To">
-                                <rect key="frame" x="190" y="20" width="67" height="30"/>
+                                <rect key="frame" x="16" y="16" width="67" height="30"/>
                                 <state key="normal" title="Complete">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -134,7 +125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lz2-tu-l1r">
-                                <rect key="frame" x="70" y="11" width="46" height="46"/>
+                                <rect key="frame" x="251" y="505" width="46" height="46"/>
                                 <state key="normal" image="next.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -143,11 +134,27 @@
                                     <action selector="nextTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UUf-42-jeO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEL-kS-UGb">
+                                <rect key="frame" x="107" y="20" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OVE-eK-w8D" kind="modal" identifier="MainToIP" id="kMd-Os-REc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected Projector" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="084-XK-ZIH">
+                                <rect key="frame" x="70" y="287" width="172" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="onOffButton" destination="xvV-5S-0To" id="akF-ee-mve"/>
+                        <outlet property="selectedProjector" destination="084-XK-ZIH" id="FTn-77-jPg"/>
                         <outlet property="theGestureView" destination="Kbc-Us-Q7N" id="wL9-ob-RBE"/>
                     </connections>
                 </viewController>
@@ -158,7 +165,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="477" y="497"/>
+            <point key="canvasLocation" x="521" y="497"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="UZp-QR-Qfw">
@@ -234,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isk-qk-q0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="497"/>
+            <point key="canvasLocation" x="1023" y="497"/>
         </scene>
     </scenes>
     <resources>

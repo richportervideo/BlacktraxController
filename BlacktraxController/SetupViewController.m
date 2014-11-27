@@ -41,13 +41,10 @@
 
 - (IBAction)setDefaultValues:(id)sender {
 
-    [_ipOutlet setText:@"192.168.1.100"];
+    [_ipOutlet setText:@"10.0.30.211"];
     [_sendPortOutlet setText:@"9000"];
     [_recievePortOutlet setText:@"9001"];
-
 }
-
-
 
 #pragma mark - Navigation
 

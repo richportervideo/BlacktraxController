@@ -41,24 +41,56 @@
 
 -(void)takeMessage:(F53OSCMessage *)message {
     
+    
+    NSArray *theIncomingArgument = message.arguments;
+    NSLog(@"INCOMING ADDRESS: %@", message.addressPattern);
+    NSLog(@"INCOMING MESSAGE: %@", [theIncomingArgument objectAtIndex:0]);
+    
+
+    
+    if ([message.addressPattern  isEqual: @"/d3/bt/message/"]){
+        NSArray *arguments = message.arguments;
+        _selectedProjector.text = [arguments objectAtIndex:0];
+    }
+    
+    
     /*
      
-     Incoming messages not implemented yet
+     This is old code for reading incoming address and argument. Keeping for reference
     
-    //Setting the Address Label
+    // Setting the Address Label
     [self.addressLabel setText:message.addressPattern];
     //Requesting Argument as an Array
     NSArray *arguments = message.arguments;
     //Converting to NSNumber
     NSNumber *arg = [[NSNumber alloc]init];
     arg = [NSNumber numberWithFloat:([[arguments objectAtIndex:0]floatValue ])];
+    
     //Setting Argument label
     [self.incomingDataLabel setText:[arg stringValue]];
     NSLog(@"Incoming address: %@",  message.addressPattern);
     
-    */
-    
+     */
+     
 }
+
+
+/*
+ 
+ This code is working and tested. First is send float on a slider, second is send value on a button
+ 
+ - (IBAction)sendSliderMessage:(UISlider *)sender {
+ F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/fader" arguments:@[[NSNumber numberWithFloat:sender.value]]];
+ [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+ 
+ }
+ 
+ - (IBAction)SendMessage:(id)sender {
+ F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/" arguments:@[@5.82]];
+ [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+ }
+ 
+ */
 
 - (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer {
     
@@ -73,7 +105,7 @@
     if (location.y <= 0){
         location.y = 0;
     }
-    //Ignore Numbers over the size of the view
+    //Ignore Numbers > the size of the view
     if (location.x >= 288){
         location.x = 288;
     }
@@ -203,7 +235,7 @@
 - (IBAction)onOffTouchUpInside:(id)sender {
     
     if (!_onOffState) {
-        [_onOffButton setTitle:@"Done" forState:(UIControlStateNormal)];
+        [_onOffButton setTitle:@"End" forState:(UIControlStateNormal)];
         _onOffState = YES;
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/start" arguments:@[@0.f]];
         [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
@@ -241,23 +273,11 @@
     [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
 }
 
-
-/*
- 
- This code is working and tested. First is send float on a slider, second is send value on a button
- 
- - (IBAction)sendSliderMessage:(UISlider *)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/fader" arguments:@[[NSNumber numberWithFloat:sender.value]]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
-    
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)SendMessage:(id)sender {
-    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/" arguments:@[@5.82]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
-}
-
-*/
 
 
  #pragma mark - Navigation
@@ -269,14 +289,11 @@
          controller.setupIPAddress = _theIPAddress;
          controller.setupSendPort = _theSendPort;
          controller.setupRecievePort = _theRecievePort;
- }
+     }
 
  }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 
 @end

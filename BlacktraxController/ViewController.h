@@ -27,6 +27,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *onOffButton;
 
+//Incoming Message selected projector
+@property (weak, nonatomic) IBOutlet UILabel *selectedProjector;
+
 //Button declarations...
 
 - (IBAction)calibrateTouchDown:(id)sender;
