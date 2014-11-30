@@ -29,6 +29,8 @@
     [self.oscServer startListening];
     _onOffState = NO;
     [_onOffButton setTitle:@"Start" forState:(UIControlStateNormal)];
+    NSThread * HeartbeatAsyncThread = [[NSThread alloc]initWithTarget:self selector:@selector(heartbeatMethod) object:nil];
+    [HeartbeatAsyncThread start];
     /*
     NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current IP Address...%@", _theIPAddress);
     NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current Send Port Address...%i", _theSendPort);
@@ -36,6 +38,22 @@
     */
 }
 
+
+-(void) heartbeatMethod{
+    
+    int i = 0;
+    
+    while (i == 0) {
+    
+    F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/heartbeat" arguments:@[@1.f]];
+    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    F53OSCMessage *message2 = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/heartbeat" arguments:@[@0.f]];
+    [self.oscClient sendPacket:message2 toHost:_theIPAddress onPort:_theSendPort];
+    sleep(1);
+        
+    }
+    
+}
 
 //This reciever method handles incoming OSC Messages
 
@@ -142,7 +160,7 @@
 
 - (IBAction)calibrateTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/ok" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 - (IBAction)clearTouchDown:(id)sender {
@@ -153,7 +171,7 @@
 
 - (IBAction)clearTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/clear" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+   [self sendLoop:message];
 }
 
 - (IBAction)downTouchDown:(id)sender {
@@ -163,7 +181,7 @@
 
 - (IBAction)downTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/down" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 - (IBAction)rightTouchDown:(id)sender {
@@ -173,7 +191,7 @@
 
 - (IBAction)rightTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/right" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 - (IBAction)leftTouchDown:(id)sender {
@@ -183,7 +201,7 @@
 
 - (IBAction)leftTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/left" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 - (IBAction)upTouchDown:(id)sender {
@@ -193,7 +211,7 @@
 
 - (IBAction)upTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/up" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 - (IBAction)nextTouchDown:(id)sender {
@@ -203,7 +221,7 @@
 
 - (IBAction)nextTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/next" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 - (IBAction)prevTouchDown:(id)sender {
@@ -214,7 +232,7 @@
 
 - (IBAction)prevTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/prev" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 
@@ -238,14 +256,14 @@
         [_onOffButton setTitle:@"End" forState:(UIControlStateNormal)];
         _onOffState = YES;
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/start" arguments:@[@0.f]];
-        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+        [self sendLoop:message];
         // NSLog(@"Start Message Just Sent");
         // NSLog(@"onOffState = %@", _onOffState ? @"Yes" : @"No" );
     } else {
         [_onOffButton setTitle:@"Start" forState:(UIControlStateNormal)];
         _onOffState = NO;
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/done" arguments:@[@0.f]];
-        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+        [self sendLoop:message];
         // NSLog(@"Done Message Just Sent");
         // NSLog(@"onOffState = %@", _onOffState ? @"Yes" : @"No" );
         
@@ -260,7 +278,7 @@
 
 - (IBAction)rotLeftTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotleft" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 - (IBAction)rotRightTouchDown:(id)sender {
@@ -270,7 +288,7 @@
 
 - (IBAction)rotRightTouchUpInside:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotright" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self sendLoop:message];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -292,7 +310,13 @@
      }
 
  }
-
+-(void) sendLoop: (F53OSCMessage *) message {
+    int i = 0;
+    while (i < 10) {
+        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+        i ++;
+    }
+}
 
 
 
