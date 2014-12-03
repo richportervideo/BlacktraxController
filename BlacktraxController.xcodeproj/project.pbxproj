@@ -31,6 +31,10 @@
 		9B942EA919FFE61F002F985C /* NSNumber+F53OSCNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9819FFE61F002F985C /* NSNumber+F53OSCNumber.m */; };
 		9B942EAA19FFE61F002F985C /* NSString+F53OSCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9A19FFE61F002F985C /* NSString+F53OSCString.m */; };
 		9B942EAB19FFE61F002F985C /* README.markdown in Sources */ = {isa = PBXBuildFile; fileRef = 9B942E9B19FFE61F002F985C /* README.markdown */; };
+		9BBCE6D11A2F4F0800B3D838 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBCE6D01A2F4F0800B3D838 /* StartupViewController.m */; };
+		9BBCE6D41A2F4FF000B3D838 /* ChooseProjectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBCE6D31A2F4FF000B3D838 /* ChooseProjectorViewController.m */; };
+		9BBCE6D71A2F504A00B3D838 /* calibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBCE6D61A2F504A00B3D838 /* calibration.m */; };
+		9BBCE6DA1A2F7EEA00B3D838 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBCE6D91A2F7EEA00B3D838 /* DetailViewController.m */; };
 		9BE4D0411A24A7250066B0CE /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0401A24A7250066B0CE /* up.png */; };
 		9BE4D0451A24A7EC0066B0CE /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0421A24A7EC0066B0CE /* down.png */; };
 		9BE4D0461A24A7EC0066B0CE /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0431A24A7EC0066B0CE /* left.png */; };
@@ -104,6 +108,14 @@
 		9B942E9919FFE61F002F985C /* NSString+F53OSCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+F53OSCString.h"; path = "F53OSC/NSString+F53OSCString.h"; sourceTree = "<group>"; };
 		9B942E9A19FFE61F002F985C /* NSString+F53OSCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+F53OSCString.m"; path = "F53OSC/NSString+F53OSCString.m"; sourceTree = "<group>"; };
 		9B942E9B19FFE61F002F985C /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.markdown; path = F53OSC/README.markdown; sourceTree = "<group>"; };
+		9BBCE6CF1A2F4F0800B3D838 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
+		9BBCE6D01A2F4F0800B3D838 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
+		9BBCE6D21A2F4FF000B3D838 /* ChooseProjectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseProjectorViewController.h; sourceTree = "<group>"; };
+		9BBCE6D31A2F4FF000B3D838 /* ChooseProjectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseProjectorViewController.m; sourceTree = "<group>"; };
+		9BBCE6D51A2F504A00B3D838 /* calibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calibration.h; sourceTree = "<group>"; };
+		9BBCE6D61A2F504A00B3D838 /* calibration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calibration.m; sourceTree = "<group>"; };
+		9BBCE6D81A2F7EEA00B3D838 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		9BBCE6D91A2F7EEA00B3D838 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9BE4D0401A24A7250066B0CE /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = Icons/up.png; sourceTree = "<group>"; };
 		9BE4D0421A24A7EC0066B0CE /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = Icons/down.png; sourceTree = "<group>"; };
 		9BE4D0431A24A7EC0066B0CE /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left.png; path = Icons/left.png; sourceTree = "<group>"; };
@@ -159,11 +171,19 @@
 		9B6DCE8D19FEC28B00337120 /* BlacktraxController */ = {
 			isa = PBXGroup;
 			children = (
+				9BBCE6D51A2F504A00B3D838 /* calibration.h */,
+				9BBCE6D61A2F504A00B3D838 /* calibration.m */,
 				9B6DCE9219FEC28B00337120 /* AppDelegate.h */,
 				9B6DCE9319FEC28B00337120 /* AppDelegate.m */,
 				9B6DCE9519FEC28B00337120 /* ViewController.h */,
 				9B6DCE9619FEC28B00337120 /* ViewController.m */,
 				9B6DCE9819FEC28B00337120 /* Main.storyboard */,
+				9BBCE6D81A2F7EEA00B3D838 /* DetailViewController.h */,
+				9BBCE6D91A2F7EEA00B3D838 /* DetailViewController.m */,
+				9BBCE6D21A2F4FF000B3D838 /* ChooseProjectorViewController.h */,
+				9BBCE6D31A2F4FF000B3D838 /* ChooseProjectorViewController.m */,
+				9BBCE6CF1A2F4F0800B3D838 /* StartupViewController.h */,
+				9BBCE6D01A2F4F0800B3D838 /* StartupViewController.m */,
 				9B408D1B1A23500B00EB263F /* SetupViewController.h */,
 				9B408D1C1A23500B00EB263F /* SetupViewController.m */,
 				9B6DCE9B19FEC28B00337120 /* Images.xcassets */,
@@ -375,14 +395,18 @@
 			files = (
 				9B942EA419FFE61F002F985C /* GCDAsyncSocket.m in Sources */,
 				9B942EA319FFE61F002F985C /* F53OSCTimeTag.m in Sources */,
+				9BBCE6DA1A2F7EEA00B3D838 /* DetailViewController.m in Sources */,
 				9B942E9F19FFE61F002F985C /* F53OSCPacket.m in Sources */,
 				9B942EA919FFE61F002F985C /* NSNumber+F53OSCNumber.m in Sources */,
+				9BBCE6D11A2F4F0800B3D838 /* StartupViewController.m in Sources */,
+				9BBCE6D41A2F4FF000B3D838 /* ChooseProjectorViewController.m in Sources */,
 				9B942EA219FFE61F002F985C /* F53OSCSocket.m in Sources */,
 				9B942EAA19FFE61F002F985C /* NSString+F53OSCString.m in Sources */,
 				9B942EA119FFE61F002F985C /* F53OSCServer.m in Sources */,
 				9B942EA019FFE61F002F985C /* F53OSCParser.m in Sources */,
 				9B6DCE9719FEC28B00337120 /* ViewController.m in Sources */,
 				9B6DCE9419FEC28B00337120 /* AppDelegate.m in Sources */,
+				9BBCE6D71A2F504A00B3D838 /* calibration.m in Sources */,
 				9B942EA819FFE61F002F985C /* NSDate+F53OSCTimeTag.m in Sources */,
 				9B942E9C19FFE61F002F985C /* F53OSCBundle.m in Sources */,
 				9B942E9D19FFE61F002F985C /* F53OSCClient.m in Sources */,

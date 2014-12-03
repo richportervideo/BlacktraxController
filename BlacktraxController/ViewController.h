@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "F53OSC.h"
+#import "calibration.h"
 
 
 @interface ViewController : UIViewController <F53OSCClientDelegate>
@@ -16,6 +17,7 @@
 @property (strong, nonatomic) NSString* theIPAddress;
 @property int theSendPort;
 @property int theRecievePort;
+@property calibration *theCal;
 
 
 //Gesture Recognition
