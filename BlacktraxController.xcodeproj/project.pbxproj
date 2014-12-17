@@ -35,6 +35,8 @@
 		9BBCE6D41A2F4FF000B3D838 /* ChooseProjectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBCE6D31A2F4FF000B3D838 /* ChooseProjectorViewController.m */; };
 		9BBCE6D71A2F504A00B3D838 /* calibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBCE6D61A2F504A00B3D838 /* calibration.m */; };
 		9BBCE6DA1A2F7EEA00B3D838 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBCE6D91A2F7EEA00B3D838 /* DetailViewController.m */; };
+		9BD7E1F01A34D6600005C79F /* Projector.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7E1EF1A34D6600005C79F /* Projector.m */; };
+		9BD7E1F31A34DB450005C79F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7E1F21A34DB450005C79F /* InfoViewController.m */; };
 		9BE4D0411A24A7250066B0CE /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0401A24A7250066B0CE /* up.png */; };
 		9BE4D0451A24A7EC0066B0CE /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0421A24A7EC0066B0CE /* down.png */; };
 		9BE4D0461A24A7EC0066B0CE /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BE4D0431A24A7EC0066B0CE /* left.png */; };
@@ -116,6 +118,10 @@
 		9BBCE6D61A2F504A00B3D838 /* calibration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calibration.m; sourceTree = "<group>"; };
 		9BBCE6D81A2F7EEA00B3D838 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		9BBCE6D91A2F7EEA00B3D838 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		9BD7E1EE1A34D6600005C79F /* Projector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projector.h; sourceTree = "<group>"; };
+		9BD7E1EF1A34D6600005C79F /* Projector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Projector.m; sourceTree = "<group>"; };
+		9BD7E1F11A34DB450005C79F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		9BD7E1F21A34DB450005C79F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		9BE4D0401A24A7250066B0CE /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = Icons/up.png; sourceTree = "<group>"; };
 		9BE4D0421A24A7EC0066B0CE /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = Icons/down.png; sourceTree = "<group>"; };
 		9BE4D0431A24A7EC0066B0CE /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left.png; path = Icons/left.png; sourceTree = "<group>"; };
@@ -180,6 +186,8 @@
 				9B6DCE9819FEC28B00337120 /* Main.storyboard */,
 				9BBCE6D81A2F7EEA00B3D838 /* DetailViewController.h */,
 				9BBCE6D91A2F7EEA00B3D838 /* DetailViewController.m */,
+				9BD7E1EE1A34D6600005C79F /* Projector.h */,
+				9BD7E1EF1A34D6600005C79F /* Projector.m */,
 				9BBCE6D21A2F4FF000B3D838 /* ChooseProjectorViewController.h */,
 				9BBCE6D31A2F4FF000B3D838 /* ChooseProjectorViewController.m */,
 				9BBCE6CF1A2F4F0800B3D838 /* StartupViewController.h */,
@@ -189,6 +197,8 @@
 				9B6DCE9B19FEC28B00337120 /* Images.xcassets */,
 				9B6DCE9D19FEC28B00337120 /* LaunchScreen.xib */,
 				9B6DCE8E19FEC28B00337120 /* Supporting Files */,
+				9BD7E1F11A34DB450005C79F /* InfoViewController.h */,
+				9BD7E1F21A34DB450005C79F /* InfoViewController.m */,
 			);
 			path = BlacktraxController;
 			sourceTree = "<group>";
@@ -399,6 +409,7 @@
 				9B942E9F19FFE61F002F985C /* F53OSCPacket.m in Sources */,
 				9B942EA919FFE61F002F985C /* NSNumber+F53OSCNumber.m in Sources */,
 				9BBCE6D11A2F4F0800B3D838 /* StartupViewController.m in Sources */,
+				9BD7E1F01A34D6600005C79F /* Projector.m in Sources */,
 				9BBCE6D41A2F4FF000B3D838 /* ChooseProjectorViewController.m in Sources */,
 				9B942EA219FFE61F002F985C /* F53OSCSocket.m in Sources */,
 				9B942EAA19FFE61F002F985C /* NSString+F53OSCString.m in Sources */,
@@ -415,6 +426,7 @@
 				9B942EAB19FFE61F002F985C /* README.markdown in Sources */,
 				9B942EA519FFE61F002F985C /* GCDAsyncUdpSocket.m in Sources */,
 				9B942EA719FFE61F002F985C /* NSData+F53OSCBlob.m in Sources */,
+				9BD7E1F31A34DB450005C79F /* InfoViewController.m in Sources */,
 				9B6DCE9119FEC28B00337120 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

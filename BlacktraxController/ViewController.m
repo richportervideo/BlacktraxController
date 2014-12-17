@@ -22,9 +22,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"");
+    NSLog(@"--------------------------");
+    NSLog(@"CALIBRATE VIEW CONTROLLER");
+    NSLog(@"--------------------------");
+    NSLog(@"");
+    
     self.oscClient = [[F53OSCClient alloc] init];
     self.oscServer = [[F53OSCServer alloc] init];
-    [self.oscServer setPort:_theRecievePort];
+    [self.oscServer setPort:_theCal.theRecievePort];
     [self.oscServer setDelegate:self];
     [self.oscServer startListening];
     _onOffState = NO;
@@ -32,8 +39,8 @@
     NSThread * HeartbeatAsyncThread = [[NSThread alloc]initWithTarget:self selector:@selector(heartbeatMethod) object:nil];
     [HeartbeatAsyncThread start];
     /*
-    NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current IP Address...%@", _theIPAddress);
-    NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current Send Port Address...%i", _theSendPort);
+    NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current IP Address...%@", _theCal.theIPAddress);
+    NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current Send Port Address...%i", _theCal.theSendPort);
     NSLog(@"VIEWCONTROLLER_VIEWDIDLOAD: Current Recieve Port...%i", _theRecievePort);
     */
 }
@@ -46,9 +53,9 @@
     while (i == 0) {
     
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/heartbeat" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
     F53OSCMessage *message2 = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/heartbeat" arguments:@[@0.f]];
-    [self.oscClient sendPacket:message2 toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message2 toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
     sleep(1);
         
     }
@@ -99,13 +106,13 @@
  
  - (IBAction)sendSliderMessage:(UISlider *)sender {
  F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/fader" arguments:@[[NSNumber numberWithFloat:sender.value]]];
- [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+ [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
  
  }
  
  - (IBAction)SendMessage:(id)sender {
  F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/showcontrol/" arguments:@[@5.82]];
- [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+ [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
  }
  
  */
@@ -144,17 +151,17 @@
     */
     
     F53OSCMessage *messageX = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/x" arguments:@[[NSNumber numberWithFloat:NewlocationX]]];
-    [self.oscClient sendPacket:messageX toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:messageX toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
     
     F53OSCMessage *messageY = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/y" arguments:@[[NSNumber numberWithFloat:NewlocationY]]];
-    [self.oscClient sendPacket:messageY toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:messageY toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
     
 }
 
 - (IBAction)calibrateTouchDown:(id)sender {
     
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/ok" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 
 }
 
@@ -165,7 +172,7 @@
 
 - (IBAction)clearTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/clear" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
     
 }
 
@@ -176,7 +183,7 @@
 
 - (IBAction)downTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/down" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 }
 
 - (IBAction)downTouchUpInside:(id)sender {
@@ -186,7 +193,7 @@
 
 - (IBAction)rightTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/right" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 }
 
 - (IBAction)rightTouchUpInside:(id)sender {
@@ -196,7 +203,7 @@
 
 - (IBAction)leftTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/left" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 }
 
 - (IBAction)leftTouchUpInside:(id)sender {
@@ -206,7 +213,7 @@
 
 - (IBAction)upTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/up" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 }
 
 - (IBAction)upTouchUpInside:(id)sender {
@@ -216,7 +223,7 @@
 
 - (IBAction)nextTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/next" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 }
 
 - (IBAction)nextTouchUpInside:(id)sender {
@@ -226,7 +233,7 @@
 
 - (IBAction)prevTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/prev" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 
 }
 
@@ -240,11 +247,11 @@
 - (IBAction)onOffTouchDown:(id)sender {
     if (!_onOffState) {
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/start" arguments:@[@1.f]];
-        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+        [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
         // NSLog(@"Start Message Just Sent");
     } else {
         F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/done" arguments:@[@1.f]];
-        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+        [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
         // NSLog(@"Done Message Just Sent");
     }
     
@@ -273,7 +280,7 @@
 
 - (IBAction)rotLeftTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotleft" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 }
 
 - (IBAction)rotLeftTouchUpInside:(id)sender {
@@ -283,7 +290,7 @@
 
 - (IBAction)rotRightTouchDown:(id)sender {
     F53OSCMessage *message = [F53OSCMessage messageWithAddressPattern:@"/d3/bt/rotright" arguments:@[@1.f]];
-    [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+    [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
 }
 
 - (IBAction)rotRightTouchUpInside:(id)sender {
@@ -304,8 +311,8 @@
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
      if([segue.identifier isEqualToString:@"MainToIP"]){
          SetupViewController *controller = (SetupViewController *)segue.destinationViewController;
-         controller.setupIPAddress = _theIPAddress;
-         controller.setupSendPort = _theSendPort;
+         controller.setupIPAddress = _theCal.theIPAddress;
+         controller.setupSendPort = _theCal.theSendPort;
          controller.setupRecievePort = _theRecievePort;
      }
 
@@ -313,7 +320,7 @@
 -(void) sendLoop: (F53OSCMessage *) message {
     int i = 0;
     while (i < 10) {
-        [self.oscClient sendPacket:message toHost:_theIPAddress onPort:_theSendPort];
+        [self.oscClient sendPacket:message toHost:_theCal.theIPAddress onPort:_theCal.theSendPort];
         i ++;
     }
 }

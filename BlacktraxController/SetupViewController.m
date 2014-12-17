@@ -25,6 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"");
+    NSLog(@"--------------------------");
+    NSLog(@"SETUP VIEW CONTROLLER");
+    NSLog(@"--------------------------");
+    NSLog(@"");
+    
     NSLog(@"Memory Address for current calibration object %p", theCal);
     
     [_ipOutlet setText: theCal.theIPAddress];
@@ -67,6 +73,7 @@
      theCal.theIPAddress = _ipOutlet.text;
      theCal.theSendPort = [_sendPortOutlet.text intValue];
      theCal.theRecievePort = [_recievePortOutlet.text intValue];
+     //Pass the calibration object to the desination viewcontroller
      controller.theCal = theCal;
     }
  }

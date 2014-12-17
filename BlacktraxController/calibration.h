@@ -15,5 +15,10 @@
 @property int theRecievePort;
 @property NSString *theMessage;
 @property int timesChanged;
+@property NSArray *selectedProjectors;
+@property BOOL selectionSet;
+@property NSArray *totalProjectors;
+@property NSMutableArray *projectorObjects;
+@property NSArray *projectorLocks;
 
 @end

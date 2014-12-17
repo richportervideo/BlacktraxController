@@ -7,11 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "calibration.h"
+#import "F53OSC.h"
+#import "StartupViewController.h"
 
 @interface ChooseProjectorViewController : ViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *ProjectortableView;
+@property calibration *theCal;
+@property NSMutableArray *selectedPJIndicies;
+@property (strong, nonatomic) NSMutableArray *selectedPJNames;
+
+
 
 - (IBAction)SetSelection:(id)sender;
+- (IBAction)getProjectorsFromd3:(id)sender;
 
 @end

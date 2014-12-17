@@ -19,6 +19,8 @@
         _theRecievePort = 9001;
         _timesChanged = -1;
         NSLog(@"Memory Address for current calibration object %p", self);
+        _projectorObjects = [[NSMutableArray alloc]init];
+        _selectionSet = NO;
     }
     
     
